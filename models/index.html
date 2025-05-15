@@ -1,0 +1,39 @@
+<script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const userEmail = params.get("email");
+    const fName = params.get("fname");
+    const lName = params.get("lname");
+
+
+    if(userEmail){
+        document.getElementsByName("ascemail")[0].value = userEmail;
+        document.getElementsByName("ascemail")[0].placeholder = userEmail;
+    }else{
+        document.getElementsByName("ascemail")[0].value = "";
+        document.getElementsByName("ascemail")[0].placeholder = "";
+
+    }
+
+    if(fName){
+        document.getElementsByName("ascFName")[0].value = fName;
+        document.getElementsByName("ascFName")[0].placeholder = fName;
+    }else{
+        document.getElementsByName("ascFName")[0].value = "";
+        document.getElementsByName("ascFName")[0].placeholder = "";
+    }
+
+    if(lName){
+        document.getElementsByName("ascLName")[0].value = lName;
+    }else{
+        document.getElementsByName("ascLName")[0].value = "";
+    }
+      })
+</script>
+
+<form id="attyShareClaim" class="attyShareClaim" action="/" method="POST">
+    <input type="hidden" placeholder="" name="ascemail" value="">
+    <input type="hidden" placeholder="" name="ascFName" value="">
+    <input type="hidden" placeholder="" name="ascLName" value="">
+    <button type="submit">Submit</button>
+</form>
